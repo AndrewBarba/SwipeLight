@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--Torch View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="TorchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg.png" id="fsV-aR-L5R" userLabel="BG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" id="b8d-2v-fxZ" userLabel="White Light">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" id="FLx-oB-1OZ">
+                                <rect key="frame" x="0.0" y="114" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" image="left.png" id="xCx-yJ-8gM">
+                                        <rect key="frame" x="20" y="125" width="100" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" image="right.png" id="Y1J-Bp-n0k">
+                                        <rect key="frame" x="200" y="125" width="100" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="up.png" id="Hb1-Vp-B2S">
+                                        <rect key="frame" x="125" y="5" width="70" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="down.png" id="yVA-Ew-1E9">
+                                        <rect key="frame" x="125" y="215" width="70" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SU9-lw-utN" appends="YES" id="RDl-MK-lHb"/>
+                            <outletCollection property="gestureRecognizers" destination="O4e-7X-i43" appends="YES" id="SZX-NF-xOd"/>
+                            <outletCollection property="gestureRecognizers" destination="FA8-do-tIb" appends="YES" id="oxG-DC-aQa"/>
+                            <outletCollection property="gestureRecognizers" destination="QaK-D3-W2Y" appends="YES" id="vMh-lH-o0F"/>
+                            <outletCollection property="gestureRecognizers" destination="tBT-V1-rAx" appends="YES" id="dcY-DJ-A9H"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="arrowContainer" destination="FLx-oB-1OZ" id="LHo-9b-rB1"/>
+                        <outlet property="down" destination="yVA-Ew-1E9" id="AE8-Sc-PKh"/>
+                        <outlet property="left" destination="xCx-yJ-8gM" id="45V-nC-8fs"/>
+                        <outlet property="right" destination="Y1J-Bp-n0k" id="4qK-U9-xeQ"/>
+                        <outlet property="up" destination="Hb1-Vp-B2S" id="PqD-qN-xwy"/>
+                        <outlet property="whiteLightView" destination="b8d-2v-fxZ" id="vo5-nx-UYz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="SU9-lw-utN" userLabel="Swipe UP">
+                    <connections>
+                        <action selector="torchON:" destination="2" id="Mgs-g6-7DY"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="O4e-7X-i43" userLabel="Swipe DOWN">
+                    <connections>
+                        <action selector="torchOFF:" destination="2" id="E4x-wy-xft"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="FA8-do-tIb" userLabel="Swipe RIGHT">
+                    <connections>
+                        <action selector="strobeFaster:" destination="2" id="D9b-IK-fUO"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="QaK-D3-W2Y" userLabel="Swipe LEFT">
+                    <connections>
+                        <action selector="strobeSlower:" destination="2" id="ojk-L2-VlV"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="2" maximumNumberOfTouches="5" id="tBT-V1-rAx">
+                    <connections>
+                        <action selector="changeLevel:" destination="2" id="qPa-R6-hHe"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="174" y="164"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg.png" width="320" height="568"/>
+        <image name="bg_white.png" width="320" height="568"/>
+        <image name="down.png" width="61" height="91"/>
+        <image name="left.png" width="91" height="61"/>
+        <image name="right.png" width="91" height="61"/>
+        <image name="up.png" width="61" height="91"/>
+    </resources>
+    <classes>
+        <class className="TorchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TorchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeLevel:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="action" name="strobeFaster:"/>
+                <relationship kind="action" name="strobeSlower:"/>
+                <relationship kind="action" name="torchOFF:"/>
+                <relationship kind="action" name="torchON:"/>
+                <relationship kind="outlet" name="arrowContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="down" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="left" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="right" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="up" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="whiteLightView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
